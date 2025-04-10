@@ -15,7 +15,7 @@ import java.util.Scanner;
  * Print "YES" if all routes are possible, and "NO" otherwise. In the latter case also print two cities a and b such that you cannot travel from city a to city b. If there are several possible solutions, you can print any of them.
  * Note: time limit errors on the platform
  */
-public class FlightsRoutesCheckCSESTwoPath {
+public class FlightsRoutesCheckCSESTwoPassDFS {
     public static void main(String[] args) {
             Scanner input = new Scanner(System.in);
             String line = input.nextLine();
