@@ -18,13 +18,6 @@
  *
  *
  */
- public class FacebookMinimumNumberIOfPeopleToSpreadAMessageTwoPassDFS {
-     findMinimumNumberOfPeople(List<List<Integer>> matrix) {
+ public class FacebookMinimumNumberIOfPeopleToSpreadAMessageTaraju {
 
-     }
-     public static void main (String [] args) {
-         // build matrix
-         List<List<Integer>> matrix = new ArrayList<>();
-
-     }
 }
