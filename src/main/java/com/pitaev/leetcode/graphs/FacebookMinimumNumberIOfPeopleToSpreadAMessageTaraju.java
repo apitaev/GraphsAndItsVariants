@@ -16,11 +16,6 @@
  * Output: minumum number of people to reach out
  * </p>
  *
- * Observation: -find sctrongly connected components using Kasaraju's Algorithms.
- *              -build compensation graph.
- *              -how many sources has the compensation graph
- *              -parse each edge and update in-degree
- *              -return number of vertexes in the compensation graph with zero degree
  *
  */
  public class FacebookMinimumNumberIOfPeopleToSpreadAMessageTwoPassDFS {
