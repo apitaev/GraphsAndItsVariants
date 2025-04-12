@@ -3,15 +3,14 @@ import java.util.Comparator;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.PriorityQueue;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 /**
- * This class is a Dijkstra-based implementation for the leetcode problem: <code>773</code>:
+ * This class is a BFS implementation for the leetcode problem: <code>773</code>:
  * https://leetcode.com/problems/sliding-puzzle/
  * Observation: every state of the PuzzleBoard can be represented as a graph node.
- * Note: this problem can be solved using BFS, so the Dijkstra is not preferable there.
  */
-class SlidingPuzzle {
+class SlidingPuzzleBFS {
     static class BoardState {
         int a;
         int b;
@@ -61,15 +60,14 @@ class SlidingPuzzle {
         if (start.equals(target)) return 0;
         // build graph on the fly
         // run Dijkstra
-        Map<BoardState, Integer> captured = new HashMap<>();
-        PriorityQueue<BoardState> queue = new PriorityQueue<>(Comparator.comparingInt(BoardState::getDistance));
+        Map<BoardState, Integer> distances = new HashMap<>();
+        ArrayDeque<BoardState> queue = new ArrayDeque<>();
         queue.offer(start);
         while (queue.size() > 0) {
             BoardState current = queue.poll();
-            if (captured.get(current) != null) continue;
-            captured.put(current, current.distance);
+            distances.put(current, current.distance);
             for (BoardState neighbor : getNeighbors(current)) {
-                if (captured.get(neighbor) == null) {
+                if (distances.get(neighbor) == null) {
                     neighbor.distance = current.distance + 1;
                     queue.offer(neighbor);
                     if (neighbor.equals(target)) return neighbor.distance;
