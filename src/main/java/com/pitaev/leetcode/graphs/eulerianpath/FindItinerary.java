@@ -8,6 +8,23 @@ import java.util.ArrayDeque;
 /**
  * This class implements solution for the leetcode problem<code>332</code>
  * https://leetcode.com/problems/reconstruct-itinerary/description/
+ * <p>There're some refreshments about the Eulerian path / Eulerian graph:
+ * <ul>
+ *     <li>An Eulerian path traverses every edge of the graph exactly ones</li>
+ *     <li>An Eulerian cycle is a Eulerian path which ends back at the starting vertex</li>
+ *     <li>A Graph containing Eulerian cycle called Eulerian Graph</li>
+ * </ul>
+ * <p>The undirected graph to be Eulerian:
+ * <ul>
+ *     <li>Every vertex should have even degree to be Eulerain cycle</li>
+ *     <li>At most two vertices should have odd degree to be Eularian path</li>
+ * </ul>
+ *
+ * <p>The undirected graph to be Eulerian:
+ * <ul>
+ *     <li>Every vertex should have in-degree == out-degree to be Eulearion cycle</li>
+ *     <li>For Eulerian path: exactly one vertex with out-degree = in-degree + 1 (start vertex) and exactly one vertex with in-degree = out-degree + 1 (end vertex)</li>
+ * </ul>
  * The eulearian graph algorithm uses dfs approach with some modifications:
  * <ul>
  *     <li>Edges is removed from the adjMap, once it is visited , the stack structure allows removal of the element in O(1)</li>
