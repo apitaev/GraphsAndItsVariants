@@ -19,6 +19,8 @@ import java.util.ArrayDeque;
  *     <li>Every vertex should have even degree to be Eulerain cycle</li>
  *     <li>At most two vertices should have odd degree to be Eularian path</li>
  * </ul>
+ * <p>The same vertex can occur many times in Eulearian cycle, so we can not use an existing dfs template</p>
+ * <p>If we want to to travers every edge in the Graph exactly one time, the problem can be reduced to the Eulerian path.</p>
  *
  * <p>The undirected graph to be Eulerian:
  * <ul>
@@ -40,6 +42,9 @@ class FindItinerary{
         Collections.sort(tickets, (a, b) -> a.get(1).compareTo(b.get(1)) * (-1));
         Map<String, ArrayDeque<String>> adjList = buildGraph(tickets);
         List<String> result = new ArrayList<>();
+        // design strategy here is iterative improvement. I return to the node, where I made mistake, and try another path.
+        // this another path should be cycle because the vertex is with even degree.
+        // Hierholzer's algorith to create Eulearian cycle
         dfs("JFK", adjList, result);
         Collections.reverse(result);
         return result;
