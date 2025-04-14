@@ -1,4 +1,4 @@
-import java.Math;
+import java.lang.Math;
 /**
  * This class implements a DP-based solution for the leetcode problem <code>64</code>:
  * https://leetcode.com/problems/minimum-path-sum/
