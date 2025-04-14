@@ -22,11 +22,6 @@ class AllPathsFromSourceToTarget {
             slate.remove(slate.size() - 1);
             return;
         }
-        // edge case2: node has no neighbors, return
-        if (adjList[start].length == 0) {
-            slate.remove(slate.size() - 1);
-            return;
-        }
         for (int neighbor : adjList[start]) {
             dfs(neighbor, adjList, slate, result);
         }
