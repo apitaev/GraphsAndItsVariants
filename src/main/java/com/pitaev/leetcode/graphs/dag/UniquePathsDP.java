@@ -1,5 +1,5 @@
 /**
- * This class implements Dijkstra-based solution for the leetcode problem <code>62</code>:
+ * This class implements a DP-based solution for the leetcode problem <code>62</code>:
  * https://leetcode.com/problems/unique-paths
  * Observation: we only need 2 rows to calculate the grid until the cell (m - 1, n - 1)
  */
